@@ -1,0 +1,274 @@
+Database 
+
+It is a systematic collection of data.
+
+Why we need database:
+To manage data effectively.
+Manual validation of databse is very tough to do.
+Flexibilty to manage the databse.
+Multiple people can work on database at one time.
+Also for more security.
+Access control.
+
+DBMS
+Database management system.
+It was implemented in 1960.
+
+
+Introduction to SQL:
+
+SQL is used to create,update,delete database.
+Here data are stored in rows and columns form.
+
+RDBMS:
+It is based on relational model.
+In RDMS each row is a record with a unique id called key.
+
+
+There are some flavours of SQL:
+
+MYSQL
+ORACLE
+MYSQL SERVER
+SYBASE
+
+SQL Query:
+
+Select * FROM data where age > 20:
+
+
+
+SQL is used as a DDL.
+Used to define or create a database.
+
+Also as a DML.
+Used to maintain already existing database.
+
+As DCL.
+Used to protect your database against corrution and misuse.
+
+
+SQL is also used a client server language.
+SQL is also used 
+
+SQL Tables:
+
+Fields are basically columns in a table with specific information.
+Record is basically an individual info.
+
+Datatypes in SQL:
+
+Int 
+Char
+Date 
+
+
+Creatre Database:
+CREATE DATABASE Database_Name
+
+Using Database:
+USE Database_Name
+
+DROP Database 
+DROP Database_Name
+
+No Null Constraint:
+Not null constraint ensures that a column cannot have a null value.
+
+Default Constraint: 
+Set a default value to a consteaint where no value is specified.
+
+Unique Contraint:
+Each value need to be unique.
+
+Primary Key Constraint:
+It uniquely identifies each records in a table.
+
+Foreign Key:
+It is a primary key in other table.
+
+Creation of a table:
+
+CREATE TABLE tablename
+
+e_id NOT NULL
+E_name VARCHAR(30)
+
+INSERT INTO employee values(2 , 'Ram')
+
+Select Statement:
+
+SELECT * FROM TABLE WHERE CONDITION
+
+UPDATE:
+
+UPDATE columnnane
+SET column_name = 'Xam' age = 32
+WHERE condition 
+
+
+
+DELETE values:
+
+DELETE FROM tablename
+WHERE condition
+
+ALTER Table:
+Update , modify ,delete in existing table.
+
+DROP and TRUNCATE:
+
+DROP TABLE tablename
+DROP will delete table from database.
+TRUNCATE will delte containt from table.
+
+TRUNCATE TABLE table_name
+DROP TABLE talbe_name
+
+
+Import csv file in SQL:
+
+Normal Import
+
+String function in SQL:
+System defined function:
+rand() ,  round() , count() etc.
+String function: UPPER() , LOWER() , LENGTH() , SUBSTRING() , NOW() , FORMAT() , CONCAT() etc. 
+
+Aggregate function : Mainly used by select and groupby.
+COUNT() - Give total no. of rows , SUM() , AVG() , MAX() , MIN() etc.
+
+Date & Time : 
+Select extract(Month/year/date/dow from date_column) 
+
+
+User-Defined function:
+
+
+GROUP BY: This statement group rows that have the same rows in summary table.
+
+E.g., 
+SELECT mode , SUM(amount) AS Total
+FROM payment
+GROUP BY mode
+HAVING count(amt) >=2 and count(amt) < 4
+ORDER BY total desc
+
+Group by usi ka kro jisme same chij repette kre naaki primary key otherwise it will give errorr.
+
+HAVING : Used to apply filter on group by.
+
+SELECT - WHERE
+GROUP BY - HAVING
+
+
+Timestamp: Datatype having date and time.
+
+ TIME() , DATE() , YEAR() , TIMESTAMP() , TIMESTAMPZ() , TIMEZONE() , NOW() , TIMEOFDAY()
+CURRENT_TIME() , CURRENT_DATE()
+
+EXTRACT:
+EXTRACT(MONTH FROM Date_field)
+
+JOINS IN SQL:
+Join mean to combine something. For join we need to have similar column in between two table.
+
+INNER JOIN:
+Returns records that have matching values in both tables.
+
+ SELECT column_name FROM TableA inner join TableB
+ON id.talbeA = id.tableB
+
+Left: Common + Left
+Right : Common + Right
+Outer or Full : All
+Inner : Common
+
+SELF JOIN: Table joined with itself.
+
+
+ SELECT column_name FROM Table as T1 join Table AS t2
+ON t1.id = t2.id
+
+UNION & UNION ALL : Copy paste two table. Same no. of columns , same data type , have them in the same order.
+UNION remove duplicates record while UNION ALL not.
+
+
+SUBQUERY in SQL: It is a nested query (Query inside query).
+
+select * from payment
+where amt > (select avg(amt) from payment )
+Here we also use IN and EXISTS opearator.
+
+Window Function:
+
+It has:
+
+1) Aggregate 
+2) Analytical
+3) Ranking
+over particular window.
+
+
+Aggregate: SUM , COUNT , MIN , MAX.
+Ranking: ROW_NUMBER() , RANK , DENSE_RANK , PERCENT_RANK
+Analytic: LEAD , LAG , FIRST_VALUE , LAST_VALUE
+
+
+CASE Expression:
+If there is no else then it will return null.
+
+CASE 
+WHEN condition1 THEN result1
+WHEN condition2 THEN result2
+ELSE other result
+END
+or
+CASE amt
+WHEN 500 THEN result1
+WHEN 100 THEN result2
+ELSE other result
+END
+
+
+CTE: Common table expression
+It is use by adding WITH
+WITH my_cte AS (SELECT a,b,c FROM Table1)
+SELECT a,c FROM cte
+
+
+last 30 day:
+
+> current_date - interval 30 day.
+
+datediff(month , HireDate , Getdate() )
+
+going 2 month back from current date:
+DATEADD(dd , 1 , EOMONTH(getDate() , -2)
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
